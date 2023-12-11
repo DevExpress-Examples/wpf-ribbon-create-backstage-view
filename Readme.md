@@ -3,16 +3,38 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T325047)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WPF Ribbon - Create a Backstage View 
+
+This example demonstrates how to create a [WPF Backstage View](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.BackstageViewControl) (a full screen application menu) inspired by Microsoft Office 2010.
+
+![WPF Ribbon - Backstage View, DevExpress](https://raw.githubusercontent.com/DevExpress-Examples/wpf-ribbon-create-backstage-view/22.2.2%2B/media/wpf-ribbon-backstageview-devexpress.png)
+
+```xaml
+<dxr:RibbonControl RibbonStyle="Office2010">
+    ...
+    <dxr:RibbonControl.ApplicationMenu>
+        <dxr:BackstageViewControl>
+            <dxr:BackstageButtonItem Content="New" Glyph="{dx:DXImage Image=New_16x16.png}"/>
+            <dxr:BackstageButtonItem Content="Open" Glyph="{dx:DXImage Image=Open_16x16.png}" />
+            <dxr:BackstageTabItem Content="Recent">
+                <dxr:BackstageTabItem.ControlPane>
+                    <ContentControl/>
+                </dxr:BackstageTabItem.ControlPane>
+            </dxr:BackstageTabItem>
+            <dxr:BackstageButtonItem Content="Close" Glyph="{dx:DXImage Image=Close_16x16.png}" />
+        </dxr:BackstageViewControl>
+    </dxr:RibbonControl.ApplicationMenu>
+</dxr:RibbonControl>
+```
+
+## Files to Review
 
 * [MainWindow.xaml](./CS/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/MainWindow.xaml))
-<!-- default file list end -->
-# How to: Create Backstage View 
 
 
-RibbonControl supports displaying the Office2007-like Application Menu as well as the <a href="https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2010/ee691833(v=office.14)">Backstage View</a> that is available in Office2010 and higher. In this example, we demonstrated how to create a Backstage View. It's presented by <strong>BackstageViewControl</strong>. To learn more on how to use this control, please refer to the <a href="https://documentation.devexpress.com/#WPF/CustomDocument10507">Backstage View</a> documentation page.<br><br>Please note that BackstageViewControl can be displayed in two modes:<br><br>- The control occupies the entire client area.<br><img src="https://raw.githubusercontent.com/DevExpress-Examples/how-to-create-backstage-view-t325047/15.2.4+/media/33d5c805-a3d4-11e5-80bf-00155d62480c.png"><br>- The client area is not fully occupied, and the ribbon page headers remain visible.<br><img src="https://raw.githubusercontent.com/DevExpress-Examples/how-to-create-backstage-view-t325047/15.2.4+/media/3ad2750e-a3d4-11e5-80bf-00155d62480c.png"><br>By default, the display mode depends on the selected theme. To switch it manually, use the <a href="https://documentation.devexpress.com/#WPF/DevExpressXpfRibbonBackstageViewControl_IsFullScreentopic">BackstageViewControl.IsFullScreen</a> property.<br><br><strong>See also:</strong><br><a href="https://documentation.devexpress.com/#WPF/CustomDocument8182">How to create an Application Menu</a>
+## Documentation
 
-<br/>
-
-
+* [BackstageViewControl Class](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.BackstageViewControl)
+* [RibbonControl.ApplicationMenu](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.RibbonControl.ApplicationMenu)
+* [BackstageViewControl.IsFullScreen](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.BackstageViewControl.IsFullScreen)
